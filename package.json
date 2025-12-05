@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://lou2164678.github.io/MKSFund",
+  "homepage": "https://koshershekelfund.github.io/mksfund",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
