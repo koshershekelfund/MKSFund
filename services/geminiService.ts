@@ -3,7 +3,7 @@
 const apiKey = process.env.OPENROUTER_API_KEY || '';
 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const MODEL = 'google/gemini-2.5-flash';
+const MODEL = 'google/gemini-2.5-flash-preview-09-2025';
 
 export const getRabbiAdvice = async (
   userMessage: string
