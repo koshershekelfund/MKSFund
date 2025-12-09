@@ -6,25 +6,25 @@ export const Team: React.FC = () => {
       name: 'LouJizzTickles',
       role: 'Head of Market Stimulation',
       bio: 'Lou brings a delicate touch to aggressive expansion. He tickles the yield curve until it submits, extracting value from sticky situations that others are simply afraid to handle.',
-      image: 'https://picsum.photos/seed/lou/400/500'
+      image: `${import.meta.env.BASE_URL}images/evtol.jpg`
     },
     {
       name: 'EVTOL',
       role: 'Director of Surgical Wealth',
       bio: 'A physician who traded the stethoscope for the ticker tape. He realized saving lives pays pennies compared to saving taxes, turning a shekel hobby into a generational wealth engine.',
-      image: 'https://picsum.photos/seed/evtol/400/500'
+      image: `${import.meta.env.BASE_URL}images/lou.jpg`
     },
     {
       name: 'RICO_BOSCO',
       role: 'Chief Contra-Indicator & Security',
       bio: 'Famous for the "Inverse Rico" strategy—if he sells, we buy. He helps generate shekels by being wrong and protects them with paranoid vigilance. The ultimate hedge.',
-      image: 'https://picsum.photos/seed/rico/400/500'
+      image: `${import.meta.env.BASE_URL}images/s500.jpg`
     },
     {
       name: 'S-500',
       role: 'VP of Precious Metals & Retrieval',
       bio: 'Expert in shekel retrieval. Always pitching high-reward, low-risk ideas that just require a "minor injection of working capital" to unlock the vault. A master of the hustle.',
-      image: 'https://picsum.photos/seed/s500/400/500'
+      image: `${import.meta.env.BASE_URL}images/rico.jpg`
     }
   ];
 
@@ -44,14 +44,14 @@ export const Team: React.FC = () => {
             <div key={index} className="group bg-slate-900 border border-slate-800 hover:border-gold-500/50 transition-all duration-500">
               <div className="relative h-80 overflow-hidden">
                 <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-all z-10"></div>
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
+                <img
+                  src={member.image}
+                  alt={member.name}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
                 />
                 <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-900 to-transparent z-20"></div>
               </div>
-              
+
               <div className="p-6 relative z-30 -mt-12">
                 <div className="bg-slate-950 p-6 border border-slate-800 shadow-xl group-hover:border-gold-500/30 transition-colors h-full">
                   <h3 className="text-lg font-serif text-gold-500 mb-1">{member.name}</h3>
