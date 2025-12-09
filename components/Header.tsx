@@ -6,7 +6,7 @@ interface HeaderProps {
   activeSection: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
+export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -20,30 +20,38 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavigation = (id: string) => {
+  type NavLink = {
+    label: string;
+    path: string;
+  };
+
+  const handleNavigation = (link: NavLink) => {
     setMobileMenuOpen(false);
-    
-    if (location.pathname !== '/') {
-      // If we are not on the home page, navigate to home with the hash
-      navigate(`/#${id}`);
+
+    if (link.path === '/') {
+      if (location.pathname === '/') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        navigate('/');
+      }
       return;
     }
 
-    // If we are already on home, just scroll
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigate(link.path);
   };
 
-  const navLinks = [
-    { id: 'about', label: 'History' },
-    { id: 'philosophy', label: 'Philosophy' },
-    { id: 'global', label: 'Global' },
-    { id: 'team', label: 'Partners' },
-    { id: 'founder', label: 'The Rabbi' },
-    { id: 'contact', label: 'Consult' },
+  const navLinks: NavLink[] = [
+    { label: 'Home', path: '/' },
+    { label: 'History', path: '/about' },
+    { label: 'Consult Rabbi', path: '/consult' },
+    { label: 'Partners', path: '/partners' },
+    { label: 'Shop', path: '/shop' },
+    { label: 'Directives', path: '/directives' },
   ];
+
+  const isActive = (link: NavLink) => {
+    return location.pathname === link.path;
+  };
 
   return (
     <header 
@@ -54,7 +62,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div 
           className="flex items-center gap-3 cursor-pointer group"
-          onClick={() => handleNavigation('hero')}
+          onClick={() => handleNavigation({ label: 'Home', path: '/' })}
         >
           <div className="bg-gold-500 p-2 rounded-sm transform group-hover:rotate-45 transition-transform duration-500">
             <TrendingUp className="text-slate-950 w-6 h-6" />
@@ -69,17 +77,17 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <nav className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <button
-              key={link.id}
-              onClick={() => handleNavigation(link.id)}
+              key={link.label}
+              onClick={() => handleNavigation(link)}
               className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-gold-500 ${
-                activeSection === link.id && location.pathname === '/' ? 'text-gold-500 font-semibold' : 'text-slate-300'
+                isActive(link) ? 'text-gold-500 font-semibold' : 'text-slate-300'
               }`}
             >
               {link.label}
             </button>
           ))}
           <button 
-             onClick={() => handleNavigation('contact')}
+             onClick={() => handleNavigation({ label: 'Partners', path: '/partners' })}
              className="border border-gold-500 text-gold-500 px-6 py-2 text-xs uppercase tracking-widest hover:bg-gold-500 hover:text-slate-950 transition-all duration-300 font-bold"
           >
             Client Login
@@ -100,10 +108,10 @@ export const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         <div className="md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-slate-800 p-6 flex flex-col gap-4 shadow-2xl">
            {navLinks.map((link) => (
             <button
-              key={link.id}
-              onClick={() => handleNavigation(link.id)}
+              key={link.label}
+              onClick={() => handleNavigation(link)}
               className={`text-left py-3 border-b border-slate-800 uppercase tracking-widest ${
-                activeSection === link.id && location.pathname === '/' ? 'text-gold-500' : 'text-slate-300'
+                isActive(link) ? 'text-gold-500' : 'text-slate-300'
               }`}
             >
               {link.label}

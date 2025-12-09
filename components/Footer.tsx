@@ -11,11 +11,12 @@ export const Footer: React.FC = () => {
         </p>
         
         <div className="flex flex-wrap justify-center gap-8 mb-8 text-xs uppercase tracking-widest text-slate-400">
-          {/* Using Link for client-side routing if possible, but standard anchors work with HashRouter too */}
-          <Link to="/#team" className="hover:text-gold-500 transition-colors">Investors</Link>
-          <Link to="/directives#legal" className="hover:text-gold-500 transition-colors">Legal Innovation</Link>
-          <Link to="/directives#mining" className="hover:text-gold-500 transition-colors">Mining Operations</Link>
-          <Link to="/directives#shmita" className="hover:text-gold-500 transition-colors">Shmita Compliance</Link>
+          <Link to="/" className="hover:text-gold-500 transition-colors">Home</Link>
+          <Link to="/about" className="hover:text-gold-500 transition-colors">History</Link>
+          <Link to="/consult" className="hover:text-gold-500 transition-colors">Consult Rabbi</Link>
+          <Link to="/partners" className="hover:text-gold-500 transition-colors">Partners</Link>
+          <Link to="/shop" className="hover:text-gold-500 transition-colors">Shop</Link>
+          <Link to="/directives" className="hover:text-gold-500 transition-colors">Directives</Link>
         </div>
 
         <div className="text-[10px] text-slate-700 max-w-2xl mx-auto leading-relaxed">

@@ -4,6 +4,12 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './components/Home';
 import { CorporateDirectives } from './components/CorporateDirectives';
+import { AboutPage } from './components/AboutPage';
+import { PartnersPage } from './components/PartnersPage';
+import { Shop } from './components/Shop';
+import { ChatWidget } from './components/ChatWidget';
+import { Consult } from './components/Consult';
+import { AssetsTicker } from './components/AssetsTicker';
 
 // Component to handle scrolling when changing routes or using hashes
 const ScrollManager: React.FC = () => {
@@ -33,7 +39,7 @@ const App: React.FC = () => {
   // Scroll spy mainly for the Home page experience
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'philosophy', 'global', 'team', 'founder', 'contact'];
+      const sections = ['hero', 'founder', 'community', 'newsletter'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -60,11 +66,17 @@ const App: React.FC = () => {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/partners" element={<PartnersPage />} />
             <Route path="/directives" element={<CorporateDirectives />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/consult" element={<Consult />} />
           </Routes>
         </main>
 
         <Footer />
+        <ChatWidget />
+        <AssetsTicker />
       </div>
     </HashRouter>
   );

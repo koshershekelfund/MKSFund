@@ -1,6 +1,8 @@
 import React from 'react';
 
 export const Team: React.FC = () => {
+  const femalePlaceholder = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 100 140" fill="none"><circle cx="50" cy="40" r="30" stroke="%23C5A059" stroke-width="6"/><line x1="50" y1="70" x2="50" y2="120" stroke="%23C5A059" stroke-width="6"/><line x1="35" y1="95" x2="65" y2="95" stroke="%23C5A059" stroke-width="6"/></svg>';
+
   const teamMembers = [
     {
       name: 'LouJizzTickles',
@@ -25,6 +27,36 @@ export const Team: React.FC = () => {
       role: 'VP of Precious Metals & Retrieval',
       bio: 'Expert in shekel retrieval. Always pitching high-reward, low-risk ideas that just require a "minor injection of working capital" to unlock the vault. A master of the hustle.',
       image: `${import.meta.env.BASE_URL}images/rico.jpg`
+    },
+    {
+      name: 'Chase WNC',
+      role: 'Head of Alt Coin Ventures',
+      bio: 'Specializes in illiquid small-cap crypto assets, arbitraging chaos across fringe chains and pre-launch token allocations. He sniffs out ponzis before they’re called ecosystems.',
+      image: `${import.meta.env.BASE_URL}images/Chase_WNC.jpeg`
+    },
+    {
+      name: 'EL',
+      role: 'Director of External Relations',
+      bio: 'A discreet operator with a direct line to the ADL. Keeps reputational shields polished while opening doors that paperwork never could.',
+      image: `${import.meta.env.BASE_URL}images/El.jpeg`
+    },
+    {
+      name: 'Benjamin "Benjy" Kapara',
+      role: 'Professional Jewish Mensch',
+      bio: 'Charm offensives are his primary asset class. Benjy brokers trust, eases tension, and ensures every deal feels like a family dinner—with a premium service fee.',
+      image: `${import.meta.env.BASE_URL}images/Benjamin_Kapara.jpeg`
+    },
+    {
+      name: 'Yorrick',
+      role: 'Director of Inclusive Talent',
+      bio: 'An esteemed leader who keeps our DEI commitments on track—expanding the bench with diverse operators and ensuring every boardroom move considers inclusion as a strategic edge.',
+      image: femalePlaceholder
+    },
+    {
+      name: 'Buttercup',
+      role: 'VP of Equity & Belonging',
+      bio: 'Champions hiring pathways that mirror our global reach, anchoring decisions in equity, access, and inclusive leadership so the Fund’s growth reflects the world it profits from.',
+      image: femalePlaceholder
     }
   ];
 

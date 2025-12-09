@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Radio, Users, ArrowRight } from 'lucide-react';
+import { MessageCircle, Radio, Users, ArrowRight, Bird } from 'lucide-react';
 
 export const Community: React.FC = () => {
     return (
@@ -25,7 +25,7 @@ export const Community: React.FC = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Telegram Card */}
                     <a
                         href="https://t.me/+VVf06iC73HU1MTQx"
@@ -106,6 +106,44 @@ export const Community: React.FC = () => {
                                 <span>Torah Study</span>
                                 <span>•</span>
                                 <span>Market Discussions</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    {/* Twitter Card */}
+                    <a
+                        href="https://x.com/KosherShekel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-sm p-8 hover:border-gold-500 transition-all duration-300 hover:shadow-xl hover:shadow-gold-500/10"
+                    >
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sky-500/20 to-transparent rounded-bl-full"></div>
+
+                        <div className="flex items-start gap-4">
+                            <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-cyan-600 rounded-sm flex items-center justify-center flex-shrink-0">
+                                <Bird className="w-8 h-8 text-white" />
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="text-2xl font-serif text-slate-100 group-hover:text-gold-500 transition-colors">
+                                    Follow Us on X
+                                </h3>
+                                <p className="text-slate-400 mt-2 text-sm leading-relaxed">
+                                    Live quips from the desk, chart banter, and shekel-sized takes on the markets. Stay ahead of the next “liquidity event.”
+                                </p>
+                                <div className="mt-4 flex items-center gap-2 text-gold-500 text-sm font-bold uppercase tracking-wider">
+                                    <span>Follow @KosherShekel</span>
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-6 pt-6 border-t border-slate-800">
+                            <div className="flex items-center gap-4 text-xs text-slate-500">
+                                <span>Market commentary</span>
+                                <span>•</span>
+                                <span>Alt coin heat</span>
+                                <span>•</span>
+                                <span>Fund quips</span>
                             </div>
                         </div>
                     </a>

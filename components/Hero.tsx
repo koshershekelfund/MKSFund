@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Hero: React.FC = () => {
   return (
@@ -28,19 +29,19 @@ export const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          <Link 
+            to="/consult"
             className="bg-gold-500 text-slate-950 px-8 py-4 text-sm uppercase tracking-widest font-bold hover:bg-white transition-colors duration-300 flex items-center gap-2 group"
           >
             Consult The Rabbi
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button 
-             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+          </Link>
+          <Link 
+             to="/about"
              className="border border-slate-400 text-slate-200 px-8 py-4 text-sm uppercase tracking-widest font-bold hover:border-gold-500 hover:text-gold-500 transition-all duration-300"
           >
             Our Legacy
-          </button>
+          </Link>
         </div>
       </div>
 
