@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // Starting range: 12B - 13B
 const MIN_ASSETS = 12_000_000_000;
 const MAX_ASSETS = 13_000_000_000;
-const MAX_CHANGE_PER_SECOND = 500_000_000; // Max ±500M per update
+const MAX_CHANGE_PER_SECOND = 50_000_000; // Max ±50M per update
 const STORAGE_KEY_ASSETS = 'mks_fund_current_assets';
 
 // Next Shmita year starts September 7, 2029 (Rosh Hashanah 5790)
@@ -32,7 +32,7 @@ export const AssetsTicker: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setAssets(prevAssets => {
-        // Random movement: -500M to +500M
+        // Random movement: -50M to +50M
         const change = (Math.random() - 0.5) * 2 * MAX_CHANGE_PER_SECOND;
         let newAssets = prevAssets + change;
 
@@ -79,7 +79,7 @@ export const AssetsTicker: React.FC = () => {
     <div className="fixed bottom-4 left-4 z-40 pointer-events-none">
       <div className="pointer-events-auto bg-slate-900/90 backdrop-blur-sm border border-gold-500/50 text-slate-100 px-4 py-3 rounded-sm shadow-lg flex flex-col gap-2 w-60">
         <div className="flex flex-col gap-1">
-          <span className="text-[10px] uppercase tracking-[0.25em] text-gold-400">Total Assets Under Management (AUM)</span>
+          <span className="text-[10px] uppercase tracking-[0.25em] text-gold-400">Total Assets Under Management</span>
           <span className="text-lg font-semibold text-gold-200">{formatter.format(assets)}</span>
         </div>
 

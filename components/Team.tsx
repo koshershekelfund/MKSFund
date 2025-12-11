@@ -17,7 +17,7 @@ export const Team: React.FC = () => {
       image: `${import.meta.env.BASE_URL}images/lou.jpg`
     },
     {
-      name: 'RICO_BOSCO',
+      name: 'Rico Bosco',
       role: 'Chief Contra-Indicator & Security',
       bio: 'Famous for the "Inverse Rico" strategy—if he sells, we buy. He helps generate shekels by being wrong and protects them with paranoid vigilance. The ultimate hedge.',
       image: `${import.meta.env.BASE_URL}images/s500.jpg`
