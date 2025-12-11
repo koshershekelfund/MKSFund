@@ -17,7 +17,7 @@ export const Founder: React.FC = () => {
                             <img
                                 src={`${import.meta.env.BASE_URL}images/rabbi-profile.jpg`}
                                 alt="Rabbi McDickerson"
-                                className="w-full h-full object-cover grayscale contrast-125"
+                                className="w-full h-full object-cover contrast-125"
                             />
                             <div className="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
                         </div>

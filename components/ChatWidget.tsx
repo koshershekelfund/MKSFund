@@ -64,7 +64,7 @@ export const ChatWidget: React.FC = () => {
         aria-label="Open chat"
       >
         <div className="absolute top-1/2 -translate-y-1/2 right-full mr-3 bg-slate-950 text-gold-400 text-xs px-3 py-1 rounded-sm border border-gold-500 shadow-lg animate-[flash_2.5s_ease-in-out_infinite] whitespace-nowrap">
-          Chat with Rabbi
+          Consult with Rabbi
         </div>
         <MessageCircle className="w-6 h-6 animate-[wiggle_1.5s_ease-in-out_infinite]" />
       </button>

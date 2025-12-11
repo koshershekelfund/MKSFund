@@ -6,8 +6,8 @@ export const Team: React.FC = () => {
   const teamMembers = [
     {
       name: 'LouJizzTickles',
-      role: 'Head of Market Stimulation',
-      bio: 'Lou brings a delicate touch to aggressive expansion. He tickles the yield curve until it submits, extracting value from sticky situations that others are simply afraid to handle.',
+      role: 'Head of Human Resources',
+      bio: 'Lou embraces internal disputes as positive catalysts for progress, fostering a culture where friction fuels innovation. He guarantees a workplace free of antisemitism while encouraging healthy debate that drives the Fund forward.',
       image: `${import.meta.env.BASE_URL}images/evtol.jpg`
     },
     {
@@ -35,68 +35,79 @@ export const Team: React.FC = () => {
       image: `${import.meta.env.BASE_URL}images/Chase_WNC.jpeg`
     },
     {
-      name: 'EL',
-      role: 'Director of External Relations',
-      bio: 'A discreet operator with a direct line to the ADL. Keeps reputational shields polished while opening doors that paperwork never could.',
-      image: `${import.meta.env.BASE_URL}images/El.jpeg`
+      name: 'Bubbles',
+      role: 'Director of Conflict Neutralization',
+      bio: 'A legal expert with deep ADL connections and a trigger-happy approach to threats. Her lifelong mission to fight antisemitism—locally and overseas—means conflicts are resolved swiftly, decisively, and with extreme prejudice.',
+      image: `${import.meta.env.BASE_URL}images/El.jpeg`,
+      deiHire: true
     },
     {
       name: 'Benjamin "Benjy" Kapara',
-      role: 'Professional Jewish Mensch',
-      bio: 'Charm offensives are his primary asset class. Benjy brokers trust, eases tension, and ensures every deal feels like a family dinner—with a premium service fee.',
+      role: 'Online Store Manager',
+      bio: 'Benjy transforms pennies into profits, selling cheap-to-produce merchandise at premium prices. His charm turns basic swag into must-have collectibles, ensuring every transaction feels like a privilege.',
       image: `${import.meta.env.BASE_URL}images/Benjamin_Kapara.jpeg`
     },
     {
       name: 'Yorrick',
-      role: 'Director of Inclusive Talent',
-      bio: 'An esteemed leader who keeps our DEI commitments on track—expanding the bench with diverse operators and ensuring every boardroom move considers inclusion as a strategic edge.',
-      image: femalePlaceholder
+      role: 'Office Secretary',
+      bio: `Facilitates Rabbi McDickerson's day-to-day activities by managing his meeting schedules, reservations, and correspondence. She tracks shmita liquidations with precision and plans staff activities that keep morale high.`,
+      image: `${import.meta.env.BASE_URL}images/Yorrick.png`,
+      deiHire: true
     },
     {
       name: 'Buttercup',
-      role: 'VP of Equity & Belonging',
-      bio: 'Champions hiring pathways that mirror our global reach, anchoring decisions in equity, access, and inclusive leadership so the Fund’s growth reflects the world it profits from.',
-      image: femalePlaceholder
+      role: 'Newsletter Editor',
+      bio: 'With extensive expertise at the New York Times and Washington Post, Buttercup joined our firm after 5 years at Bloomberg. She crafts narratives that shape perception and drive engagement, presenting our achievements in their most favorable light.',
+      image: `${import.meta.env.BASE_URL}images/Buttercup.png`,
+      deiHire: true
     }
   ];
 
   return (
-    <div className="py-24 bg-slate-950 border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="text-gold-500 uppercase tracking-[0.2em] text-sm font-bold">The Inner Circle</span>
-          <h2 className="text-3xl md:text-5xl font-serif text-slate-100 mt-4">Our Esteemed Partners</h2>
-          <p className="mt-4 text-slate-400 italic max-w-2xl mx-auto">
-            "It takes a village to raise a child, but only a few good men to bankrupt a village."
-          </p>
-        </div>
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="text-center mb-16">
+        <span className="text-gold-500 uppercase tracking-[0.2em] text-sm font-bold">The Inner Circle</span>
+        <h2 className="text-3xl md:text-5xl font-serif text-slate-100 mt-4">Our Esteemed Partners</h2>
+        <p className="mt-4 text-slate-400 italic max-w-2xl mx-auto">
+          "It takes a village to raise a child, but only a few good men to bankrupt a village."
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="group bg-slate-900 border border-slate-800 hover:border-gold-500/50 transition-all duration-500">
-              <div className="relative h-80 overflow-hidden">
-                <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-all z-10"></div>
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
-                />
-                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-900 to-transparent z-20"></div>
-              </div>
-
-              <div className="p-6 relative z-30 -mt-12">
-                <div className="bg-slate-950 p-6 border border-slate-800 shadow-xl group-hover:border-gold-500/30 transition-colors h-full">
-                  <h3 className="text-lg font-serif text-gold-500 mb-1">{member.name}</h3>
-                  <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-4">{member.role}</p>
-                  <p className="text-slate-500 text-sm leading-relaxed font-light">
-                    {member.bio}
-                  </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {teamMembers.map((member, index) => (
+          <div key={index} className="group bg-slate-900 border border-slate-800 hover:border-gold-500/50 transition-all duration-500">
+            <div className="relative h-80 overflow-hidden">
+              <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-all z-10"></div>
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+              />
+              {member.deiHire && (
+                <div className="absolute top-4 right-4 z-30">
+                  <div className="relative bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-slate-950 px-3 py-1 text-xs font-bold uppercase tracking-wider shadow-lg animate-pulse">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+                    <span className="relative z-10 drop-shadow-sm">DEI Hire</span>
+                    <div className="absolute inset-0 shadow-[0_0_15px_rgba(197,160,89,0.8)] animate-glow"></div>
+                  </div>
                 </div>
+              )}
+              <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-slate-900 to-transparent z-20"></div>
+            </div>
+
+            <div className="p-6 relative z-30 -mt-12">
+              <div className="bg-slate-950 p-6 border border-slate-800 shadow-xl group-hover:border-gold-500/30 transition-colors h-full">
+                <h3 className="text-lg font-serif text-gold-500 mb-1">{member.name}</h3>
+                <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-4">{member.role}</p>
+                <p className="text-slate-500 text-sm leading-relaxed font-light">
+                  {member.bio}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
+
   );
 };

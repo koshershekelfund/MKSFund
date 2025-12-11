@@ -21,7 +21,7 @@ const products: Product[] = [
     id: 'mug',
     name: 'Thank You Rabbi McDickerson Heart Mug',
     description: 'Sleek black ceramic mug with a red heart and “Thank you Rabbi McDickerson.” Perfect for coffee, tea, or late-night strategy sessions.',
-    price: 24,
+    price: 245,
     images: [`${import.meta.env.BASE_URL}images/thank-you-rabbi-mcdickerson-heart-mug-black.jpeg`],
     rating: 4.8,
     reviews: 182,
@@ -30,7 +30,7 @@ const products: Product[] = [
     id: 'bottle',
     name: 'Rabbi McDickerson Kosher Shekel Fund Insulated Bottle',
     description: 'Matte black insulated bottle. One side: “Thank you Rabbi McDickerson” + heart. Reverse: “Kosher Shekel Fund” + heart. Durable and travel-ready.',
-    price: 38,
+    price: 350,
     images: [
       `${import.meta.env.BASE_URL}images/rabbi-mcdickerson-kosher-shekel-fund-bottle-front.jpeg`,
       `${import.meta.env.BASE_URL}images/rabbi-mcdickerson-kosher-shekel-fund-bottle-back.jpeg`,
@@ -42,7 +42,7 @@ const products: Product[] = [
     id: 'tumbler',
     name: 'Kosher Shekel Fund Turquoise Travel Tumbler',
     description: 'Bright turquoise travel tumbler with handle and lid, featuring “Kosher Shekel Fund” and a red heart. Eye-catching and go-ready.',
-    price: 32,
+    price: 295,
     images: [`${import.meta.env.BASE_URL}images/kosher-shekel-fund-turquoise-travel-tumbler.jpeg`],
     rating: 4.7,
     reviews: 156,
@@ -62,7 +62,7 @@ export const Shop: React.FC = () => {
   const total = useMemo(() => {
     return cart.reduce((sum, item) => {
       const product = products.find((p) => p.id === item.productId);
-      return product ? sum + product.price * item.quantity : sum;
+      return product ? sum + (product.price * 0.9) * item.quantity : sum;
     }, 0);
   }, [cart]);
 
@@ -168,7 +168,10 @@ export const Shop: React.FC = () => {
                   </div>
                 </div>
                 <div className="mt-auto flex items-center justify-between">
-                  <span className="text-lg font-semibold text-slate-100">${product.price}</span>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-slate-500 line-through decoration-slate-500">${product.price}</span>
+                    <span className="text-lg font-semibold text-gold-500">${(product.price * 0.9).toFixed(2)}</span>
+                  </div>
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -205,7 +208,10 @@ export const Shop: React.FC = () => {
                   >
                     <div>
                       <p className="text-slate-100 font-semibold">{product.name}</p>
-                      <p className="text-slate-500 text-xs">${product.price} each</p>
+                      <div className="flex gap-2 items-center">
+                        <p className="text-slate-600 text-xs line-through">${product.price}</p>
+                        <p className="text-gold-500 text-xs">${(product.price * 0.9).toFixed(2)} each</p>
+                      </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <button
@@ -223,7 +229,7 @@ export const Shop: React.FC = () => {
                       </button>
                     </div>
                     <div className="text-gold-500 font-semibold">
-                      ${(product.price * item.quantity).toFixed(2)}
+                      ${((product.price * 0.9) * item.quantity).toFixed(2)}
                     </div>
                   </div>
                 );
@@ -300,7 +306,11 @@ export const Shop: React.FC = () => {
                   <ShieldCheck className="w-4 h-4 text-gold-500" />
                   <span>Ships in 1-2 business days (after divine intervention).</span>
                 </div>
-                <div className="text-3xl font-bold text-gold-500">${selectedProduct.price}</div>
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl text-slate-500 line-through">${selectedProduct.price}</span>
+                  <div className="text-4xl font-bold text-gold-500">${(selectedProduct.price * 0.9).toFixed(2)}</div>
+                  <span className="bg-red-900/50 text-red-400 text-xs font-bold px-2 py-1 rounded border border-red-500/30">10% OFF</span>
+                </div>
                 <div className="flex gap-3">
                   <button
                     onClick={() => {
@@ -367,7 +377,7 @@ export const Shop: React.FC = () => {
                       return (
                         <div key={item.productId} className="flex items-center justify-between text-sm text-slate-300">
                           <span>{product.name} x {item.quantity}</span>
-                          <span className="text-gold-500">${(product.price * item.quantity).toFixed(2)}</span>
+                          <span className="text-gold-500">${((product.price * 0.9) * item.quantity).toFixed(2)}</span>
                         </div>
                       );
                     })}
