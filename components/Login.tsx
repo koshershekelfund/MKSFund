@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { X } from 'lucide-react';
 
 export const Login: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showForgotPopup, setShowForgotPopup] = useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -72,8 +74,41 @@ export const Login: React.FC = () => {
                     </form>
 
                     <div className="mt-6 text-center">
-                        <a href="#" className="text-xs text-slate-500 hover:text-gold-500 transition-colors">Forgot Credentials?</a>
+                        <button
+                            onClick={() => setShowForgotPopup(true)}
+                            className="text-xs text-slate-500 hover:text-gold-500 transition-colors"
+                        >
+                            Forgot Credentials?
+                        </button>
                     </div>
+
+                    {/* Forgot Password Popup */}
+                    {showForgotPopup && (
+                        <div className="absolute inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-sm p-6 animation-fade-in">
+                            <div className="bg-slate-900 border border-gold-500/30 p-6 shadow-2xl relative max-w-sm w-full">
+                                <button
+                                    onClick={() => setShowForgotPopup(false)}
+                                    className="absolute top-2 right-2 text-slate-500 hover:text-gold-500 transition-colors"
+                                >
+                                    <X size={16} />
+                                </button>
+                                <h3 className="text-gold-500 font-serif text-lg mb-4 text-center">Security Notice</h3>
+                                <p className="text-slate-300 text-sm text-center leading-relaxed">
+                                    To recover your credentials, please send a direct message to our secure handle on Twitter.
+                                </p>
+                                <div className="mt-6 text-center">
+                                    <a
+                                        href="https://twitter.com"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="inline-block bg-gold-500/10 border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-slate-950 px-6 py-2 text-xs uppercase tracking-widest transition-all duration-300 font-bold"
+                                    >
+                                        Contact Support
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <div className="mt-8 text-center text-slate-600 text-xs max-w-xs mx-auto">
