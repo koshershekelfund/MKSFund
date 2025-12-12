@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { TrendingUp, Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 interface HeaderProps {
@@ -67,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection })
           <img
             src={`${import.meta.env.BASE_URL}images/logo.png`}
             alt="Kosher Shekel Fund Logo"
-            className="h-12 w-12 object-contain transform group-hover:scale-110 transition-transform duration-500"
+            className="h-12 w-auto object-contain mix-blend-screen transform group-hover:scale-110 transition-transform duration-500"
           />
           <div className="flex flex-col">
             <span className="text-gold-500 font-serif text-xl tracking-wider font-bold uppercase">McDickerson</span>
