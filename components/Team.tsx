@@ -60,6 +60,12 @@ export const Team: React.FC = () => {
       bio: 'With extensive expertise at the New York Times and Washington Post, Buttercup joined our firm after 5 years at Bloomberg. She crafts narratives that shape perception and drive engagement, presenting our achievements in their most favorable light.',
       image: `${import.meta.env.BASE_URL}images/Buttercup.png`,
       deiHire: true
+    },
+    {
+      name: 'Habibi Saylor',
+      role: 'Substence Abuse Administrator',
+      bio: 'Habibi ensures the workplace remains a drug-free environment by personally intercepting and disposing of all illicit substances found on the premises. His dedication to "testing" purely for safety compliance is unparalleled.',
+      image: `${import.meta.env.BASE_URL}images/Habibi_Saylor.jpg`
     }
   ];
 
