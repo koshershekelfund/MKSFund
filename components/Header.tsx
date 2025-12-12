@@ -47,6 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection })
     { label: 'Partners', path: '/partners' },
     { label: 'Shop', path: '/shop' },
     { label: 'Directives', path: '/directives' },
+    { label: 'Contributions', path: '/contributions' },
   ];
 
   const isActive = (link: NavLink) => {
@@ -54,13 +55,12 @@ export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection })
   };
 
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-slate-950/95 backdrop-blur-md shadow-lg border-b border-slate-800 py-3' : 'bg-transparent py-6'
-      }`}
+    <header
+      className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-slate-950/95 backdrop-blur-md shadow-lg border-b border-slate-800 py-3' : 'bg-transparent py-6'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div 
+        <div
           className="flex items-center gap-3 cursor-pointer group"
           onClick={() => handleNavigation({ label: 'Home', path: '/' })}
         >
@@ -79,23 +79,22 @@ export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection })
             <button
               key={link.label}
               onClick={() => handleNavigation(link)}
-              className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-gold-500 ${
-                isActive(link) ? 'text-gold-500 font-semibold' : 'text-slate-300'
-              }`}
+              className={`text-sm uppercase tracking-widest transition-colors duration-300 hover:text-gold-500 ${isActive(link) ? 'text-gold-500 font-semibold' : 'text-slate-300'
+                }`}
             >
               {link.label}
             </button>
           ))}
-          <button 
-             onClick={() => handleNavigation({ label: 'Partners', path: '/partners' })}
-             className="border border-gold-500 text-gold-500 px-6 py-2 text-xs uppercase tracking-widest hover:bg-gold-500 hover:text-slate-950 transition-all duration-300 font-bold"
+          <button
+            onClick={() => handleNavigation({ label: 'Partners', path: '/partners' })}
+            className="border border-gold-500 text-gold-500 px-6 py-2 text-xs uppercase tracking-widest hover:bg-gold-500 hover:text-slate-950 transition-all duration-300 font-bold"
           >
             Client Login
           </button>
         </nav>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-gold-500"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -106,13 +105,12 @@ export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection })
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-slate-900 border-b border-slate-800 p-6 flex flex-col gap-4 shadow-2xl">
-           {navLinks.map((link) => (
+          {navLinks.map((link) => (
             <button
               key={link.label}
               onClick={() => handleNavigation(link)}
-              className={`text-left py-3 border-b border-slate-800 uppercase tracking-widest ${
-                isActive(link) ? 'text-gold-500' : 'text-slate-300'
-              }`}
+              className={`text-left py-3 border-b border-slate-800 uppercase tracking-widest ${isActive(link) ? 'text-gold-500' : 'text-slate-300'
+                }`}
             >
               {link.label}
             </button>

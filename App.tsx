@@ -10,6 +10,7 @@ import { Shop } from './components/Shop';
 import { ChatWidget } from './components/ChatWidget';
 import { Consult } from './components/Consult';
 import { AssetsTicker } from './components/AssetsTicker';
+import { Contributions } from './components/Contributions';
 
 // Component to handle scrolling when changing routes or using hashes
 const ScrollManager: React.FC = () => {
@@ -62,7 +63,7 @@ const App: React.FC = () => {
       <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-gold-500 selection:text-white">
         <ScrollManager />
         <Header activeSection={activeSection} />
-        
+
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -71,6 +72,7 @@ const App: React.FC = () => {
             <Route path="/directives" element={<CorporateDirectives />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/consult" element={<Consult />} />
+            <Route path="/contributions" element={<Contributions />} />
           </Routes>
         </main>
 
