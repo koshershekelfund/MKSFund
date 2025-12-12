@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 interface HeaderProps {
@@ -64,9 +64,11 @@ export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection })
           className="flex items-center gap-3 cursor-pointer group"
           onClick={() => handleNavigation({ label: 'Home', path: '/' })}
         >
-          <div className="bg-gold-500 p-2 rounded-sm transform group-hover:rotate-45 transition-transform duration-500">
-            <TrendingUp className="text-slate-950 w-6 h-6" />
-          </div>
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo.png`}
+            alt="Kosher Shekel Fund Logo"
+            className="h-12 w-12 object-contain transform group-hover:scale-110 transition-transform duration-500"
+          />
           <div className="flex flex-col">
             <span className="text-gold-500 font-serif text-xl tracking-wider font-bold uppercase">McDickerson</span>
             <span className="text-slate-400 text-xs tracking-[0.2em] uppercase">Kosher Shekel Fund</span>
