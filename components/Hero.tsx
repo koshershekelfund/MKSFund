@@ -20,8 +20,8 @@ export const Hero: React.FC = () => {
       {/* Content */}
       <div className="relative z-20 max-w-5xl mx-auto px-6 text-center">
         <div className="mb-8 inline-block">
-          <span className="bg-gradient-to-r from-transparent via-gold-500/10 to-transparent border-y border-gold-500/20 px-8 py-2 text-gold-400 uppercase tracking-[0.4em] text-xs md:text-sm font-bold">
-            Est. 1993 • New York • Dubai • Kyiv
+          <span className="bg-gradient-to-r from-transparent via-gold-500/10 to-transparent border-y border-gold-500/20 px-8 py-2 text-gold-400 uppercase tracking-[0.4em] text-[8px] sm:text-xs md:text-sm font-bold whitespace-nowrap">
+            Est. 1993 • New York • Dubai • Tel Aviv • Kyiv
           </span>
         </div>
 
