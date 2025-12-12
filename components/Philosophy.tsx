@@ -37,18 +37,18 @@ export const Philosophy: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {items.map((item, index) => (
-            <div key={index} className="bg-slate-950 border border-slate-800 p-8 hover:border-gold-500 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gold-500/5 rounded-full blur-2xl -mr-10 -mt-10 transition-all group-hover:bg-gold-500/10"></div>
-              
-              <div className="text-gold-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div key={index} className="bg-slate-950 border border-slate-800 p-8 hover:border-gold-500/50 transition-all duration-500 group relative overflow-hidden hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(197,160,89,0.15)]">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gold-500/5 rounded-full blur-2xl -mr-10 -mt-10 transition-all group-hover:bg-gold-500/20 group-hover:scale-150"></div>
+
+              <div className="text-gold-500 mb-6 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
                 {item.icon}
               </div>
-              
+
               <h3 className="text-xl font-serif text-slate-200 mb-4 group-hover:text-gold-500 transition-colors">
                 {item.title}
               </h3>
-              
-              <p className="text-slate-500 text-sm leading-relaxed">
+
+              <p className="text-slate-500 text-sm leading-relaxed group-hover:text-slate-400 transition-colors">
                 {item.description}
               </p>
             </div>

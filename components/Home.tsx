@@ -5,6 +5,7 @@ import { Founder } from './Founder';
 import { Community } from './Community';
 import { Newsletter } from './Newsletter';
 
+
 export const Home: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -19,11 +20,8 @@ export const Home: React.FC = () => {
       <section className="bg-slate-900">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold-500">Doctrine</p>
-            <h2 className="text-4xl md:text-5xl font-serif text-slate-100 mt-4">Our Principles</h2>
-            <p className="text-slate-400 mt-4 max-w-2xl mx-auto italic">
-              Capital with character—where conviction, loopholes, and ambiguity meet to maximize returns.
-            </p>
+
+
           </div>
           <Philosophy />
         </div>
@@ -32,6 +30,8 @@ export const Home: React.FC = () => {
       <section>
         <Founder />
       </section>
+
+
 
       <section className="bg-slate-900">
         <div className="max-w-5xl mx-auto px-6 py-16">
@@ -56,15 +56,7 @@ export const Home: React.FC = () => {
         <Community />
       </section>
 
-      <section className="bg-slate-950 border-t border-slate-900">
-        <div className="max-w-6xl mx-auto px-6 py-16 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold-500">Partners</p>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-100 mt-4">Our Inner Circle</h2>
-          <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
-            Meet the architects of our “capital with character” strategies and the faces behind our returns.
-          </p>
-        </div>
-      </section>
+
 
       <section>
         <Newsletter />

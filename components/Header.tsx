@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ activeSection: _activeSection })
             </button>
           ))}
           <button
-            onClick={() => handleNavigation({ label: 'Partners', path: '/partners' })}
+            onClick={() => handleNavigation({ label: 'Login', path: '/login' })}
             className="border border-gold-500 text-gold-500 px-6 py-2 text-xs uppercase tracking-widest hover:bg-gold-500 hover:text-slate-950 transition-all duration-300 font-bold"
           >
             Client Login

@@ -4,6 +4,7 @@ export interface TimelineEvent {
   year: string;
   title: string;
   description: string;
+  jobsCreated?: number;
 }
 
 export interface PhilosophyItem {

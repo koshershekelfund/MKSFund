@@ -76,7 +76,7 @@ export const AssetsTicker: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-4 left-4 z-40 pointer-events-none">
+    <div className="fixed bottom-16 left-4 z-40 pointer-events-none">
       <div className="pointer-events-auto bg-slate-900/90 backdrop-blur-sm border border-gold-500/50 text-slate-100 px-4 py-3 rounded-sm shadow-lg flex flex-col gap-2 w-60">
         <div className="flex flex-col gap-1">
           <span className="text-[10px] uppercase tracking-[0.25em] text-gold-400">Total Assets Under Management</span>

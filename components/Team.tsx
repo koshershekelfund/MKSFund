@@ -11,6 +11,12 @@ export const Team: React.FC = () => {
       image: `${import.meta.env.BASE_URL}images/evtol.jpg`
     },
     {
+      name: 'Quintavious',
+      role: 'Real Estate Specialist',
+      bio: 'Quintavious possesses a supernatural ability to convince homeowners that selling low is in their best interest. A master of cosmetic arbitrage, he transforms dilapidated structures into rustic opportunities with minimal effort.',
+      image: `${import.meta.env.BASE_URL}images/Quintavious.png`
+    },
+    {
       name: 'EVTOL',
       role: 'Director of Surgical Wealth',
       bio: 'A physician who traded the stethoscope for the ticker tape. He realized saving lives pays pennies compared to saving taxes, turning a shekel hobby into a generational wealth engine.',
@@ -63,7 +69,7 @@ export const Team: React.FC = () => {
     },
     {
       name: 'Habibi Saylor',
-      role: 'Substence Abuse Administrator',
+      role: 'Substance Abuse Administrator',
       bio: 'Habibi ensures the workplace remains a drug-free environment by personally intercepting and disposing of all illicit substances found on the premises. His dedication to "testing" purely for safety compliance is unparalleled.',
       image: `${import.meta.env.BASE_URL}images/Habibi_Saylor.jpg`
     }
